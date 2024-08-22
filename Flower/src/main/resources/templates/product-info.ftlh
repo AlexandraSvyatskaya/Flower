@@ -13,7 +13,7 @@
 <b>Категория: </b>${product.category}<br>
 <b>Описание: </b>${product.description}<br>
 <b>Цена: </b>${product.price}<br>
-<b>Автор: </b>${product.user.name}<br>
+<b>Автор: </b><a href="/user/${product.user.id}">${product.user.name}</a><br>
 </form>
 </body>
 </html>

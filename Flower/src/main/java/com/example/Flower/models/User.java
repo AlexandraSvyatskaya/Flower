@@ -15,7 +15,7 @@ public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id_user")
+    @Column(name="id")
    private Long id;
     @Column(name="email", unique = true)
    private String email;
@@ -39,6 +39,10 @@ public class User implements UserDetails {
        dateOfCreated=LocalDateTime.now();
    }
    //securiti
+
+    public boolean isAdmin(){
+       return roles.contains(Role.ROLE_ADMIN);
+    }
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return roles;
